@@ -92,6 +92,7 @@ persist.log.tag.OpenGLRenderer=S
 persist.log.tag.ultrasound_extn=S
 persist.log.tag.HWUI=S
 persist.log.tag.hwcomposer=S
+persist.log.tag.CHIUSECASE=S
 
 # Feature flags
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
