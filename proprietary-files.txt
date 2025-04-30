@@ -291,6 +291,9 @@ vendor/lib64/libcamxstatscore.so
 vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 
+# Camera Extension
+system_ext/framework/camerax-vendor-extensions.jar
+
 # Camera components
 vendor/lib64/camera/components/com.arcsoft.node.smoothtransition.so
 vendor/lib64/camera/components/com.facepp.node.siq.so
