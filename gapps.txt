@@ -24,9 +24,10 @@ PRODUCT_MODEL := 22021211RG
 RISING_MAINTAINER := SenX|センクス & efeisot
 
 # Gms 
-WITH_GMS := false
+WITH_GMS := true
 
 # Launcher
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
 TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := false
 
 # Blur
