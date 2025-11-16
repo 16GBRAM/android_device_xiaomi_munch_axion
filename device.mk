@@ -174,7 +174,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
-# 
+# Camera
 $(call soong_config_set,camera,override_format_from_reserved,true)
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -418,6 +418,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
+
+#Speaker
+$(call soong_config_set,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 # Telephony
 PRODUCT_PACKAGES += \
