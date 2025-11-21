@@ -6,16 +6,17 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceManager;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.FileUtils;
 import org.lineageos.settings.hbm.AutoHBMService;
 
-public class DcDimmingSettingsFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class DcDimmingSettingsFragment extends SettingsBasePreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
     private static final String DC_DIMMING_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable";
     private static final String HBM_ENABLE_KEY = "hbm";
@@ -43,7 +44,7 @@ public class DcDimmingSettingsFragment extends PreferenceFragment implements Pre
         mContext = getContext();
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         
-        addPreferencesFromResource(R.xml.dcdimming_settings);
+        setPreferencesFromResource(R.xml.dcdimming_settings, rootKey);
         initializeDcDimmingPreference();
         registerReceiver();
     }

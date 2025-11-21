@@ -25,16 +25,15 @@ public class AutoHBMTimePreference extends CustomSeekBarPreference {
     public AutoHBMTimePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mInterval = 1;
-        mShowSign = false;
-        mUnits = "";
-        mContinuousUpdates = false;
-        mMinValue = mMinVal;
-        mMaxValue = mMaxVal;
-        mDefaultValueExists = true;
-        mDefaultValue = mDefVal;
+        setSliderIncrement(1);
+        setShowSign(false);
+        setUnits("");
+        setUpdatesContinuously(false);
+        setMin(mMinVal);
+        setMax(mMaxVal);
+        setDefaultValue(mDefVal);
         SharedPreferences msharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        mValue = Integer.parseInt(msharedPrefs.getString(AUTO_HBM_DISABLE_TIME_KEY, "1"));
+        setValue(Integer.parseInt(msharedPrefs.getString(AUTO_HBM_DISABLE_TIME_KEY, "1")));
 
         setPersistent(false);
     }

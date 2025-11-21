@@ -9,14 +9,14 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.Settings;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.TwoStatePreference;
 
 import org.lineageos.settings.utils.FileUtils;
 import org.lineageos.settings.R;
 
-public class HBMFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class HBMFragment extends SettingsBasePreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "HBMFragment";
 
     // Constants for preference keys and system nodes
@@ -60,7 +60,7 @@ public class HBMFragment extends PreferenceFragment implements Preference.OnPref
         mContext = getContext();
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         
-        addPreferencesFromResource(R.xml.hbm_settings);
+        setPreferencesFromResource(R.xml.hbm_settings, rootKey);
         initializeHBMPreferences();
         registerReceiver();
     }

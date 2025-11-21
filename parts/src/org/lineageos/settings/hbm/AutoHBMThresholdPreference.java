@@ -34,16 +34,15 @@ public class AutoHBMThresholdPreference extends CustomSeekBarPreference {
     public AutoHBMThresholdPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mInterval = 1000;
-        mShowSign = false;
-        mUnits = "";
-        mContinuousUpdates = false;
-        mMinValue = mMinVal;
-        mMaxValue = mMaxVal;
-        mDefaultValueExists = true;
-        mDefaultValue = mDefVal;
+        setSliderIncrement(1000);
+        setShowSign(false);
+        setUnits("");
+        setUpdatesContinuously(false);
+        setMin(mMinVal);
+        setMax(mMaxVal);
+        setDefaultValue(mDefVal);
         SharedPreferences msharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        mValue = Integer.parseInt(msharedPrefs.getString(AUTO_HBM_THRESHOLD_KEY, "7000"));
+        setValue(Integer.parseInt(msharedPrefs.getString(AUTO_HBM_THRESHOLD_KEY, "7000")));
 
         setPersistent(false);
     }
